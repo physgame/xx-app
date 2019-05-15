@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dong.app.bus.dao.DemoDao">
+
+    <resultMap id="Demo" type="dong.app.bus.domain.Demo">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="data" jdbcType="VARCHAR" property="data"/>
+    </resultMap>
+
+    <select id="getById" parameterType="java.lang.Long" resultMap="Demo">
+        select
+        *
+        from `bus_demo`
+        where `id` = #{id}
+    </select>
+
+</mapper>
